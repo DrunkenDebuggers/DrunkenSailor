@@ -1,0 +1,10 @@
+<table>
+{% if projects %}
+	{% for p in projects %}
+	<tr>
+		<td><a href="{% url 'detail' p.id%}">{{ p.title }}</a></td>
+		<td style="background-color:#{{ p.label.color }}">{{ p.label.name }}</td>
+	</tr>
+	{% endfor %}
+{% endif %}
+</table>
