@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
+from django.http import HttpResponseRedirect
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -10,4 +11,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^sailor/', include('sailor.urls')),
+    url(r'^$',lambda r:HttpResponseRedirect('sailor/')),
 )
