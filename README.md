@@ -8,5 +8,6 @@ Use with caution, this is a highly experimental version!
 TODO
 ----
 
+* Fixtures for default user groups (Project and Label add only)
 * Proper design
 * Testing, testing, testing
