@@ -1,4 +1,6 @@
-<h3>{{ project.title }}</h3>
+{% extends "sailor/index.html" %}
+{% block contents %}
+<h2>{{ project.title }}</h2>
 <div>
 	<dl>
 		<dt>Creator:</dt>
@@ -9,3 +11,4 @@
 <div>
 {{ project.description | linebreaks | urlize }}
 </div>
+{% endblock %}
