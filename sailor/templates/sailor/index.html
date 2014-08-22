@@ -1,27 +1,31 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Drunken Debuggers</title>
+        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
     </head>
 <body>
+<div class="container">
 <h1>Drunken Debuggers</h1>
 {% block contents %}
-<div>
-Welcome to Drunken Sailor, the Drunken Debuggers project navigator! Feel free to browse the projects and join the work with others! If you would like to propose a new project, find the guy with the Drunken Debuggers vodka bottle so he can register you to the admin interface.
-</div>
-<div>
-You can read more about Drunken Debuggers <a href="https://github.com/DrunkenDebuggers/DrunkenDebuggers" target="_blank">here</a>. The repository for this very webapp can be found <a href="https://github.com/DrunkenDebuggers/DrunkenSailor" target="_blank">here</a>. Pull requests are welcome everywhere!
-</div>
+<p class="lead">Welcome to Drunken Sailor, the Drunken Debuggers project navigator!</p>
+<p>Feel free to browse the projects and join the work with others! If you would like to propose a new project, find the guy with the Drunken Debuggers vodka bottle so he can register you to the admin interface.</p>
+<p>You can read more about Drunken Debuggers <a href="https://github.com/DrunkenDebuggers/DrunkenDebuggers" target="_blank">here</a>. The repository for this very webapp can be found <a href="https://github.com/DrunkenDebuggers/DrunkenSailor" target="_blank">here</a>. Pull requests are welcome everywhere!</p>
 <h2>Current projects</h2>
-<table>
+<table class="table table-hover">
 {% if projects %}
 	{% for p in projects %}
 	<tr>
 		<td><a href="{% url 'detail' p.id%}">{{ p.title }}</a></td>
-		<td style="background-color:#{{ p.label.color }}">{{ p.label.name }}</td>
+		<td><span class="btn btn-xs btn-default" style="background-color:#{{ p.label.color }}">{{ p.label.name }}</span></td>
 	</tr>
 	{% endfor %}
 {% endif %}
 </table>
 {% endblock %}
+</div>
 </body>
 </html>
