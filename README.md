@@ -23,6 +23,13 @@ INSTALL
 `
 ```
 
+Dependencies
+------------
+
+* Tested with Django 1.6.5 `pip install Django==1.6.5`
+* Tested with Apache mod_wsgi
+* Tested with SQLite
+
 TODO
 ----
 
